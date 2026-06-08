@@ -1,0 +1,5 @@
+{
+  "name": "my-sub-worker",
+  "main": "index.js",
+  "compatibility_date": "2026-06-08"
+}
