@@ -10,7 +10,7 @@ async function handleRequest(request) {
   const expireDate = new Date("2026-12-31T23:59:59Z"); 
 
   
-  const totalGigabytes = 100; 
+  const totalGigabytes = 10; 
 
   
 
