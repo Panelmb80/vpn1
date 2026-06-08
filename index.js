@@ -11,7 +11,7 @@ async function handleRequest(request) {
 
   const githubSubUrl = "https://raw.githubusercontent.com/Panelmb80/vpn1/refs/heads/main/config.txt";
   const expireDate = new Date("2026-07-08T23:59:59Z");
-  const totalGigabytes = 1000;
+  const totalGigabytes = 100;
   const expireTimestamp = Math.floor(expireDate.getTime() / 1000);
   const totalBytes = totalGigabytes * 1024 * 1024 * 1024;
 
