@@ -7,10 +7,10 @@ async function handleRequest(request) {
   const githubSubUrl = "https://raw.githubusercontent.com/Panelmb80/vpn1/refs/heads/main/config.txt"; 
 
   
-  const expireDate = new Date("2026-07-08T23:59:59Z"); 
+  const expireDate = new Date("2026-12-31T23:59:59Z"); 
 
   
-  const totalGigabytes = 50; 
+  const totalGigabytes = 100; 
 
   
 
@@ -25,7 +25,7 @@ async function handleRequest(request) {
     
     newResponse.headers.set(
       'subscription-userinfo', 
-      upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}
+      `upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}`
     );
     
     newResponse.headers.set('content-type', 'text/plain; charset=utf-8');
