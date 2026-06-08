@@ -1,9 +1,6 @@
 warp://8.6.112.95:942?iface=wg0&detour=8.6.112.95:942#Irancell1
 warp://8.6.112.252:1018#Irancell2
 Vless://bb38e1cb-4215-4e0d-87e9-dee09025abd3@panel.vpnkey.workers.dev:80?path=%2FeyJqdW5rIjoiTjRGUkxqbTU3IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ%3D%3D%3Fed%3D2560&security=none&encryption=none&host=panel.vpnkey.workers.dev&type=ws#Wifi1
-
 vless://bb38e1cb-4215-4e0d-87e9-dee09025abd3@www.speedtest.net:80?path=%2FeyJqdW5rIjoic2h6WWNwaGRSIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ%3D%3D%3Fed%3D2560&security=none&encryption=none&host=panel.vpnkey.workers.dev&type=ws#Wifi2
-
 vless://bb38e1cb-4215-4e0d-87e9-dee09025abd3@172.67.147.145:80?path=%2FeyJqdW5rIjoidFNwdEtPaUZNUiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D%3Fed%3D2560&security=none&encryption=none&host=panel.vpnkey.workers.dev&type=ws#Wifi3
-
 vless://bb38e1cb-4215-4e0d-87e9-dee09025abd3@104.21.28.204:80?path=%2FeyJqdW5rIjoiMnk3c1VoTTg2IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcm94eWlwIiwicGFuZWxJUHMiOltdfQ%3D%3D%3Fed%3D2560&security=none&encryption=none&host=panel.vpnkey.workers.dev&type=ws#Wifi4
