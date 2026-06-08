@@ -5,13 +5,13 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
   const url = new URL(request.url);
   
-  if (url.pathname !== "/panel80") {
-    return new Response("Not Found", { status: 404 });
+  if (url.pathname !== "/VIPMidas") {
+    return new Response(null, { status: 404 });
   }
 
   const githubSubUrl = "https://raw.githubusercontent.com/Panelmb80/vpn1/refs/heads/main/config.txt";
   const expireDate = new Date("2026-07-08T23:59:59Z");
-  const totalGigabytes = 10;
+  const totalGigabytes = 1000;
   const expireTimestamp = Math.floor(expireDate.getTime() / 1000);
   const totalBytes = totalGigabytes * 1024 * 1024 * 1024;
 
@@ -29,6 +29,6 @@ async function handleRequest(request) {
 
     return newResponse;
   } catch (error) {
-    return new Response("Error", { status: 500 });
+    return new Response(null, { status: 500 });
   }
 }
