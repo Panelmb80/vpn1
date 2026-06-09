@@ -1,3 +1,4 @@
 warp://8.6.112.95:942?iface=wg0&detour=8.6.112.95:942#Irancell1
 warp://8.6.112.252:1018#Irancell2
 warp://8.6.112.86:928/?ifp=10-20&ifpm=m4#Irancell3
+warp://8.6.112.46:939/?ifp=10-20&ifpm=m4#Irancell4
