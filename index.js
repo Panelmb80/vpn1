@@ -4,31 +4,26 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
-  const url = new URL(request.url);
   
-  // ۱. بررسی لینک: اگر کلمه VIPMidas توی لینک نباشه، ارور ۴۰۴ میده
-  if (!url.pathname.includes("VIPMidas")) {
-    return new Response("Not Found", { status: 404 });
-  }
-
-  // ۲. تاریخ انقضا: تنظیم شده روی تاریخ ۲۰۲۶/۰۷/۰۸
-  const expireDate = new Date("2026-07-08T23:59:59Z");
+  // ۱. تاریخ انقضا: تنظیم شده روی تاریخ ۲۰۲۷/۰۷/۰۸ (تمدید تا سال آینده)
+  // اگر خواستید باز هم تمدید کنید، عدد 2027 را تغییر دهید.
+  const expireDate = new Date("2027-07-08T23:59:59Z");
   if (new Date() > expireDate) {
-    return new Response("Expired", { status: 403 });
+    return new Response("Expired", { status: 403 }); // اگر تاریخ بگذره، کانفیگ برای کاربر کار نمیکنه
   }
 
-  // ۳. دریافت کانفیگ‌ها: دانلود مستقیم فایل متنی آی‌پی‌ها از گیت‌هاب شما
+  // ۲. دریافت کانفیگ‌ها: دانلود مستقیم فایل کانفیگ‌های وارپ از گیت‌هاب شما
   const response = await fetch("https://raw.githubusercontent.com/Panelmb80/vpn1/refs/heads/main/config.txt");
   const content = await response.text();
 
-  // ۴. ارسال خروجی: تحویل کانفیگ‌ها به هیدیفای همراه با مشخصات حجم (بدون KV و حجم تصادفی)
+  // ۳. ارسال خروجی به هیدیفای: نمایش حجم و تاریخ انقضا به کاربر
   return new Response(content, {
     status: 200,
     headers: {
       'content-type': 'text/plain; charset=utf-8',
-      // در این خط مقدار download روی 0 تنظیم شده و ترافیک کل هم 100 گیگابایته
+      // نمایش حجم کل ۱۰۰ گیگابایت (Total) و حجم مصرفی صفر (Download) و تاریخ انقضا به هیدیفای
       'subscription-userinfo': `upload=0; download=0; total=${100 * 1024 * 1024 * 1024}; expire=${Math.floor(expireDate.getTime() / 1000)}`,
-      'Cache-Control': 'no-store' // جلوگیری از ذخیره شدن آی‌پی‌های قدیمی در مرورگر یا کلاینت
+      'Cache-Control': 'no-store'
     }
   });
 }
