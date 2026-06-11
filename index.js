@@ -26,10 +26,18 @@ async function handleRequest(request) {
     let content = await response.text();
     let newResponse = new Response(content, response);
 
+    // اصلاح اصلی: استفاده از بک‌تیک برای قالب‌بندی صحیح متغیرها
     newResponse.headers.set(
       'subscription-userinfo',
-      upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}
+      `upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}`
     );
+    
+    // اضافه کردن هدر کمکی برای شناسایی بهتر مشخصات توسط برنامه کلاینت
+    newResponse.headers.set(
+      'profile-userinfo',
+      `upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}`
+    );
+
     newResponse.headers.set('content-type', 'text/plain; charset=utf-8');
     newResponse.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
 
@@ -37,4 +45,4 @@ async function handleRequest(request) {
   } catch (error) {
     return new Response(null, { status: 500 });
   }
-      }
+}
