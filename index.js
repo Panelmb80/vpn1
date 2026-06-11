@@ -12,19 +12,24 @@ async function handleRequest(request) {
     return new Response(null, { status: 404 });
   }
 
-  // 1. VLESS Standard
-  const vless1 = `vless://${uuid}@${domain}:443?encryption=none&security=tls&type=ws&host=${domain}&path=/&sni=${domain}#VLESS-Standard`;
-  
-  // 2. VLESS with Google SNI
-  const vless2 = `vless://${uuid}@${domain}:443?encryption=none&security=tls&type=ws&host=${domain}&path=/&sni=play.google.com#VLESS-Google-SNI`;
-  
-  // 3. VMESS WS
-  const vmessObj = { v: "2", ps: "VMESS-WS", add: domain, port: 443, id: uuid, aid: "0", net: "ws", type: "none", host: domain, path: "/", tls: "tls", sni: domain };
-  const vmess = `vmess://${btoa(JSON.stringify(vmessObj))}`;
+  // لیست SNI های مختلف برای تست
+  const snis = [
+    { name: "Google", host: "play.google.com" },
+    { name: "Soft98", host: "soft98.ir" },
+    { name: "Irancell", host: "irancell.ir" },
+    { name: "Snapp", host: "snapp.ir" },
+    { name: "Cloudflare", host: "speed.cloudflare.com" }
+  ];
 
-  const result = `${vless1}\n${vless2}\n${vmess}`;
+  let configs = "";
+  
+  // ساخت ۵ کانفیگ متفاوت
+  snis.forEach(item => {
+    const vless = `vless://${uuid}@${domain}:443?encryption=none&security=tls&type=ws&host=${domain}&path=/&sni=${item.host}#VLESS-${item.name}`;
+    configs += vless + "\n";
+  });
 
-  return new Response(result, {
+  return new Response(configs.trim(), {
     headers: { 
       'content-type': 'text/plain; charset=utf-8',
       'subscription-userinfo': `upload=0; download=0; total=107374182400; expire=${expireTimestamp}`
