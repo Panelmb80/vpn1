@@ -1,147 +1,24 @@
-{
-  "dns": {
-    "servers": [
-      {
-        "tag": "dns-remote",
-        "address": "tcp://1.1.1.1",
-        "detour": "VIP Midas 👑 | 1"
-      }
-    ]
-  },
-  "inbounds": [
-    {
-      "type": "tun",
-      "tag": "tun-in",
-      "interface_name": "tun0",
-      "inet4_address": [
-        "172.19.0.1/30"
-      ],
-      "auto_route": true,
-      "strict_route": true,
-      "stack": "system",
-      "sniff": true
-    }
-  ],
-  "outbounds": [
-    {
-      "type": "selector",
-      "tag": "PROXY",
-      "outbounds": [
-        "VIP Midas 👑 | 1",
-        "VIP Midas 👑 | 2",
-        "VIP Midas 👑 | 3",
-        "VIP Midas 👑 | 4",
-        "VIP Midas 👑 | 5",
-        "VIP Midas 👑 | 6",
-        "VIP Midas 👑 | 7",
-        "VIP Midas 👑 | 8",
-        "VIP Midas 👑 | 9",
-        "VIP Midas 👑 | 10"
-      ]
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 1",
-      "server": "8.6.112.95",
-      "server_port": 942,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 2",
-      "server": "8.6.112.252",
-      "server_port": 1018,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 3",
-      "server": "8.6.112.86",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 4",
-      "server": "8.6.112.46",
-      "server_port": 939,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 5",
-      "server": "8.6.112.213",
-      "server_port": 4233,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 6",
-      "server": "8.6.112.253",
-      "server_port": 1002,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 7",
-      "server": "8.6.112.235",
-      "server_port": 945,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 8",
-      "server": "8.6.112.108",
-      "server_port": 864,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 9",
-      "server": "8.6.112.99",
-      "server_port": 4198,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 10",
-      "server": "162.159.195.246",
-      "server_port": 903,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
-      "private_key": "private_key_placeholder",
-      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
-      "mtu": 1280
-    },
-    {
-      "type": "direct",
-      "tag": "direct-out"
-    }
-  ]
-}
+warp://8.6.112.95:942?iface=wg0&detour=8.6.112.95:942#VIP Midas 👑 | 1
+warp://8.6.112.252:1018/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 2
+warp://8.6.112.86:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 3
+warp://8.6.112.46:939/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 4
+warp://8.6.112.213:4233/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 5
+warp://8.6.112.253:1002/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 6
+warp://8.6.112.235:945/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 7
+warp://8.6.112.108:864/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 8
+warp://8.6.112.99:4198/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 9
+warp://8.6.112.8:854/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 10
+warp://162.159.192.174:934/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 11
+warp://188.114.99.35:1074/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 12
+warp://162.159.195.246:903/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 13
+warp://188.114.96.112:500/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 14
+warp://188.114.99.0:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 15
+warp://188.114.99.0:4500/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 16
+warp://162.159.193.51:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 17
+warp://188.114.96.119:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 18
+warp://188.114.97.131:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 19
+warp://188.114.97.142:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 20
+warp://188.114.97.206:4500/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 21
+warp://188.114.97.206:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 22
+warp://188.114.97.32:928/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 23
+warp://188.114.8.142:4500/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 24
