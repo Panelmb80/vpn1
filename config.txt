@@ -4,18 +4,7 @@
       {
         "tag": "dns-remote",
         "address": "tcp://1.1.1.1",
-        "detour": "proxy"
-      },
-      {
-        "tag": "dns-local",
-        "address": "8.8.8.8",
-        "detour": "direct"
-      }
-    ],
-    "rules": [
-      {
-        "outbound": "any",
-        "server": "dns-local"
+        "detour": "VIP Midas 👑 | 1"
       }
     ]
   },
@@ -34,335 +23,138 @@
   "outbounds": [
     {
       "type": "selector",
-      "tag": "proxy",
+      "tag": "PROXY",
       "outbounds": [
-        "AUTO - Best Ping ⚡",
-        "VIP Midas 👑 | 1", "VIP Midas 👑 | 2", "VIP Midas 👑 | 3", "VIP Midas 👑 | 4", "VIP Midas 👑 | 5",
-        "VIP Midas 👑 | 6", "VIP Midas 👑 | 7", "VIP Midas 👑 | 8", "VIP Midas 👑 | 9", "VIP Midas 👑 | 10",
-        "VIP Midas 👑 | 11", "VIP Midas 👑 | 12", "VIP Midas 👑 | 13", "VIP Midas 👑 | 14", "VIP Midas 👑 | 15",
-        "VIP Midas 👑 | 16", "VIP Midas 👑 | 17", "VIP Midas 👑 | 18", "VIP Midas 👑 | 19", "VIP Midas 👑 | 20",
-        "VIP Midas 👑 | 21", "VIP Midas 👑 | 22", "VIP Midas 👑 | 23", "VIP Midas 👑 | 24"
-      ],
-      "default": "AUTO - Best Ping ⚡"
-    },
-    {
-      "type": "urltest",
-      "tag": "AUTO - Best Ping ⚡",
-      "outbounds": [
-        "VIP Midas 👑 | 1", "VIP Midas 👑 | 2", "VIP Midas 👑 | 3", "VIP Midas 👑 | 4", "VIP Midas 👑 | 5",
-        "VIP Midas 👑 | 6", "VIP Midas 👑 | 7", "VIP Midas 👑 | 8", "VIP Midas 👑 | 9", "VIP Midas 👑 | 10",
-        "VIP Midas 👑 | 11", "VIP Midas 👑 | 12", "VIP Midas 👑 | 13", "VIP Midas 👑 | 14", "VIP Midas 👑 | 15",
-        "VIP Midas 👑 | 16", "VIP Midas 👑 | 17", "VIP Midas 👑 | 18", "VIP Midas 👑 | 19", "VIP Midas 👑 | 20",
-        "VIP Midas 👑 | 21", "VIP Midas 👑 | 22", "VIP Midas 👑 | 23", "VIP Midas 👑 | 24"
-      ],
-      "url": "https://cp.cloudflare.com/",
-      "interval": "3m"
+        "VIP Midas 👑 | 1",
+        "VIP Midas 👑 | 2",
+        "VIP Midas 👑 | 3",
+        "VIP Midas 👑 | 4",
+        "VIP Midas 👑 | 5",
+        "VIP Midas 👑 | 6",
+        "VIP Midas 👑 | 7",
+        "VIP Midas 👑 | 8",
+        "VIP Midas 👑 | 9",
+        "VIP Midas 👑 | 10"
+      ]
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 1",
       "server": "8.6.112.95",
       "server_port": 942,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0]
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 2",
       "server": "8.6.112.252",
       "server_port": 1018,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 3",
       "server": "8.6.112.86",
       "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 4",
       "server": "8.6.112.46",
       "server_port": 939,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 5",
       "server": "8.6.112.213",
       "server_port": 4233,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 6",
       "server": "8.6.112.253",
       "server_port": 1002,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 7",
       "server": "8.6.112.235",
       "server_port": 945,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 8",
       "server": "8.6.112.108",
       "server_port": 864,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 9",
       "server": "8.6.112.99",
       "server_port": 4198,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 10",
-      "server": "8.6.112.8",
-      "server_port": 854,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 11",
-      "server": "162.159.192.174",
-      "server_port": 934,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 12",
-      "server": "188.114.99.35",
-      "server_port": 1074,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 13",
       "server": "162.159.195.246",
       "server_port": 903,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 14",
-      "server": "188.114.96.112",
-      "server_port": 500,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 15",
-      "server": "188.114.99.0",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 16",
-      "server": "188.114.99.0",
-      "server_port": 4500,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 17",
-      "server": "162.159.193.51",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 18",
-      "server": "188.114.96.119",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 19",
-      "server": "188.114.97.131",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 20",
-      "server": "188.114.97.142",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 21",
-      "server": "188.114.97.206",
-      "server_port": 4500,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 22",
-      "server": "188.114.97.206",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 23",
-      "server": "188.114.97.32",
-      "server_port": 928,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
-    },
-    {
-      "type": "wireguard",
-      "tag": "VIP Midas 👑 | 24",
-      "server": "188.114.8.142",
-      "server_port": 4500,
-      "local_address": ["172.16.0.2/32", "2606:4700:110:8830:ed2e:1728:3d7b:e9f1/128"],
-      "private_key": "GEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEgEg=",
-      "reserved": [0,0,0],
-      "fake_packets": "20-40",
-      "fake_packets_size": "m4",
-      "fake_packets_delay": 5
+      "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
+      "private_key": "private_key_placeholder",
+      "peer_public_key": "bmXwST69Gscu4As7UJJU99v4f8eC86I+Mba85RPEKEM=",
+      "mtu": 1280,
+      "packet_encoding": "xray"
     },
     {
       "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "block",
-      "tag": "block"
+      "tag": "direct-out"
     }
   ],
-  "route": {
-    "rules": [
-      {
-        "protocol": "dns",
-        "outbound": "dns-out"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "direct"
-      }
-    ]
+  "experimental": {
+    "v2ray_api": {
+      "stats": {}
+    }
   }
 }
 
