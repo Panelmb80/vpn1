@@ -24,17 +24,16 @@ async function handleRequest(request) {
   try {
     let response = await fetch(githubSubUrl);
     let content = await response.text();
-    let newResponse = new Response(content, response);
-
-    newResponse.headers.set(
-      'subscription-userinfo',
-      upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}
-    );
-    newResponse.headers.set('content-type', 'text/plain; charset=utf-8');
-    newResponse.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-
-    return newResponse;
+    
+    return new Response(content, {
+      status: 200,
+      headers: {
+        'content-type': 'text/plain; charset=utf-8',
+        'subscription-userinfo': `upload=0; download=0; total=${totalBytes}; expire=${expireTimestamp}`,
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+      }
+    });
   } catch (error) {
     return new Response(null, { status: 500 });
   }
-      }
+}
