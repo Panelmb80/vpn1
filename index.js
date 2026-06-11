@@ -35,7 +35,7 @@ async function handleRequest(request) {
       status: 200,
       headers: {
         'content-type': 'text/plain; charset=utf-8',
-        'subscription-userinfo': `upload=0; download=30; total=${totalBytes}; expire=${expireTimestamp}`, // هدر نمایش حجم و تاریخ در برنامه
+        'subscription-userinfo': `upload=0; download=32212254720; total=${totalBytes}; expire=${expireTimestamp}`, // هدر نمایش حجم و تاریخ در برنامه
         'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate' // جلوگیری از کش شدن فایل
       }
     });
