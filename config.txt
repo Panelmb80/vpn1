@@ -40,7 +40,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 1",
-      "server": "8.6.112.95",
+      "server_address": "8.6.112.95",
       "server_port": 942,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -50,7 +50,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 2",
-      "server": "8.6.112.252",
+      "server_address": "8.6.112.252",
       "server_port": 1018,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -61,7 +61,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 3",
-      "server": "8.6.112.86",
+      "server_address": "8.6.112.86",
       "server_port": 928,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -72,7 +72,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 4",
-      "server": "8.6.112.46",
+      "server_address": "8.6.112.46",
       "server_port": 939,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -82,8 +82,9 @@
     },
     {
       "type": "wireguard",
+      "txpe": "wireguard",
       "tag": "VIP Midas 👑 | 5",
-      "server": "8.6.112.213",
+      "server_address": "8.6.112.213",
       "server_port": 4233,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -94,7 +95,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 6",
-      "server": "8.6.112.253",
+      "server_address": "8.6.112.253",
       "server_port": 1002,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -105,7 +106,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 7",
-      "server": "8.6.112.235",
+      "server_address": "8.6.112.235",
       "server_port": 945,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -116,7 +117,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 8",
-      "server": "8.6.112.108",
+      "server_address": "8.6.112.108",
       "server_port": 864,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -127,7 +128,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 9",
-      "server": "8.6.112.99",
+      "server_address": "8.6.112.99",
       "server_port": 4198,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -138,7 +139,7 @@
     {
       "type": "wireguard",
       "tag": "VIP Midas 👑 | 10",
-      "server": "162.159.195.246",
+      "server_address": "162.159.195.246",
       "server_port": 903,
       "local_address": ["172.16.0.2/32", "2606:4700:110:8f8a:42:ff1:6f7b:e44b/128"],
       "private_key": "private_key_placeholder",
@@ -150,11 +151,5 @@
       "type": "direct",
       "tag": "direct-out"
     }
-  ],
-  "experimental": {
-    "v2ray_api": {
-      "stats": {}
-    }
-  }
+  ]
 }
-
