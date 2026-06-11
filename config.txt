@@ -6,8 +6,6 @@ warp://8.6.112.213:4233/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 5
 warp://8.6.112.253:1002/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 6
 warp://8.6.112.235:945/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 7
 warp://8.6.112.108:864/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 8
-warp://8.6.112.99:4198/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 9
-warp://8.6.112.8:854/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 10
 warp://162.159.192.174:934/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 11
 warp://188.114.99.35:1074/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 12
 warp://162.159.195.246:903/?ifp=20-40&ifpm=m4&ifpt=5#VIP Midas 👑 | 13
