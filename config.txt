@@ -1,24 +1,295 @@
-warp://8.6.112.95:942?iface=wg0&detour=8.6.112.95:942#1
-warp://8.6.112.252:1018/?ifp=20-40&ifpm=m4&ifpt=5#2
-warp://8.6.112.86:928/?ifp=20-40&ifpm=m4&ifpt=5#3
-warp://8.6.112.46:939/?ifp=20-40&ifpm=m4&ifpt=5#4
-warp://8.6.112.213:4233/?ifp=20-40&ifpm=m4&ifpt=5#5
-warp://8.6.112.253:1002/?ifp=20-40&ifpm=m4&ifpt=5#6
-warp://8.6.112.235:945/?ifp=20-40&ifpm=m4&ifpt=5#7
-warp://8.6.112.108:864/?ifp=20-40&ifpm=m4&ifpt=5#8
-warp://8.6.112.99:4198/?ifp=20-40&ifpm=m4&ifpt=5#9
-warp://8.6.112.8:854/?ifp=20-40&ifpm=m4&ifpt=5#10
-warp://162.159.192.174:934/?ifp=20-40&ifpm=m4&ifpt=5#11
-warp://188.114.99.35:1074/?ifp=20-40&ifpm=m4&ifpt=5#12
-warp://162.159.195.246:903/?ifp=20-40&ifpm=m4&ifpt=5#13
-warp://188.114.96.112:500/?ifp=20-40&ifpm=m4&ifpt=5#14
-warp://188.114.99.0:928/?ifp=20-40&ifpm=m4&ifpt=5#15
-warp://188.114.99.0:4500/?ifp=20-40&ifpm=m4&ifpt=5#16
-warp://162.159.193.51:928/?ifp=20-40&ifpm=m4&ifpt=5#17
-warp://188.114.96.119:928/?ifp=20-40&ifpm=m4&ifpt=5#18
-warp://188.114.97.131:928/?ifp=20-40&ifpm=m4&ifpt=5#19
-warp://188.114.97.142:928/?ifp=20-40&ifpm=m4&ifpt=5#20
-warp://188.114.97.206:4500/?ifp=20-40&ifpm=m4&ifpt=5#21
-warp://188.114.97.206:928/?ifp=20-40&ifpm=m4&ifpt=5#22
-warp://188.114.97.32:928/?ifp=20-40&ifpm=m4&ifpt=5#23
-warp://188.114.8.142:4500/?ifp=20-40&ifpm=m4&ifpt=5#24
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-remote",
+        "address": "tcp://1.1.1.1",
+        "detour": "proxy"
+      },
+      {
+        "tag": "dns-local",
+        "address": "8.8.8.8",
+        "detour": "direct"
+      }
+    ],
+    "rules": [
+      {
+        "outbound": "any",
+        "server": "dns-local"
+      }
+    ]
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "tun0",
+      "inet4_address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system",
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "proxy",
+      "outbounds": [
+        "AUTO - Best Ping ⚡",
+        "VIP Midas 👑 | 1", "VIP Midas 👑 | 2", "VIP Midas 👑 | 3", "VIP Midas 👑 | 4", "VIP Midas 👑 | 5",
+        "VIP Midas 👑 | 6", "VIP Midas 👑 | 7", "VIP Midas 👑 | 8", "VIP Midas 👑 | 9", "VIP Midas 👑 | 10",
+        "VIP Midas 👑 | 11", "VIP Midas 👑 | 12", "VIP Midas 👑 | 13", "VIP Midas 👑 | 14", "VIP Midas 👑 | 15",
+        "VIP Midas 👑 | 16", "VIP Midas 👑 | 17", "VIP Midas 👑 | 18", "VIP Midas 👑 | 19", "VIP Midas 👑 | 20",
+        "VIP Midas 👑 | 21", "VIP Midas 👑 | 22", "VIP Midas 👑 | 23", "VIP Midas 👑 | 24"
+      ],
+      "default": "AUTO - Best Ping ⚡"
+    },
+    {
+      "type": "urltest",
+      "tag": "AUTO - Best Ping ⚡",
+      "outbounds": [
+        "VIP Midas 👑 | 1", "VIP Midas 👑 | 2", "VIP Midas 👑 | 3", "VIP Midas 👑 | 4", "VIP Midas 👑 | 5",
+        "VIP Midas 👑 | 6", "VIP Midas 👑 | 7", "VIP Midas 👑 | 8", "VIP Midas 👑 | 9", "VIP Midas 👑 | 10",
+        "VIP Midas 👑 | 11", "VIP Midas 👑 | 12", "VIP Midas 👑 | 13", "VIP Midas 👑 | 14", "VIP Midas 👑 | 15",
+        "VIP Midas 👑 | 16", "VIP Midas 👑 | 17", "VIP Midas 👑 | 18", "VIP Midas 👑 | 19", "VIP Midas 👑 | 20",
+        "VIP Midas 👑 | 21", "VIP Midas 👑 | 22", "VIP Midas 👑 | 23", "VIP Midas 👑 | 24"
+      ],
+      "url": "https://cp.cloudflare.com/",
+      "interval": "3m"
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 1",
+      "server": "8.6.112.95",
+      "server_port": 942
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 2",
+      "server": "8.6.112.252",
+      "server_port": 1018,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 3",
+      "server": "8.6.112.86",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 4",
+      "server": "8.6.112.46",
+      "server_port": 939,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 5",
+      "server": "8.6.112.213",
+      "server_port": 4233,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 6",
+      "server": "8.6.112.253",
+      "server_port": 1002,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 7",
+      "server": "8.6.112.235",
+      "server_port": 945,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 8",
+      "server": "8.6.112.108",
+      "server_port": 864,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 9",
+      "server": "8.6.112.99",
+      "server_port": 4198,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 10",
+      "server": "8.6.112.8",
+      "server_port": 854,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 11",
+      "server": "162.159.192.174",
+      "server_port": 934,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 12",
+      "server": "188.114.99.35",
+      "server_port": 1074,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 13",
+      "server": "162.159.195.246",
+      "server_port": 903,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 14",
+      "server": "188.114.96.112",
+      "server_port": 500,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 15",
+      "server": "188.114.99.0",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 16",
+      "server": "188.114.99.0",
+      "server_port": 4500,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 17",
+      "server": "162.159.193.51",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 18",
+      "server": "188.114.96.119",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 19",
+      "server": "188.114.97.131",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 20",
+      "server": "188.114.97.142",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 21",
+      "server": "188.114.97.206",
+      "server_port": 4500,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 22",
+      "server": "188.114.97.206",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 23",
+      "server": "188.114.97.32",
+      "server_port": 928,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "warp",
+      "tag": "VIP Midas 👑 | 24",
+      "server": "188.114.8.142",
+      "server_port": 4500,
+      "fake_packets": "20-40",
+      "fake_packets_size": "m4",
+      "fake_packets_delay": 5
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ]
+  }
+}
